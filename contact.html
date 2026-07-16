@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('nidz_lang')||'en';document.documentElement.lang=l;document.documentElement.dir=(l==='ar')?'rtl':'ltr';}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Nid'Z Restaurant</title>
+<meta name="description" content="Get in touch with Nid'Z Restaurant in Batumi — call, WhatsApp, email, or find us on the map. We'd love to hear from you.">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Cairo:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="preloader" aria-hidden="true"><img src="assets/img/logo.jpg" alt="" class="loader-flame"></div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+      <span class="brand-word">NID<span>'</span>Z</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="menu.html" data-i18n="nav.menu">Menu</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+      <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch"></div>
+      <a href="order.html" class="btn btn-flame btn-sm" data-i18n="nav.orderNow">Order Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="menu.html" data-i18n="nav.menu">Menu</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+  <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
+  <a href="order.html" class="btn btn-flame" data-i18n="nav.orderNow">Order Now</a>
+  <div class="lang-switch"></div>
+</div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow" data-i18n="contact.eyebrow">We'd Love To Hear From You</p>
+      <h1 data-i18n="contact.title">Contact Us</h1>
+      <p class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a> / <span data-i18n="contact.crumb">Contact</span></p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container grid grid-2" style="gap:50px;align-items:start">
+      <div class="reveal in">
+        <div class="form-success" data-i18n="contact.successMsg">✓ Your message is ready — check your email app to hit send.</div>
+        <div class="form-card">
+          <h3 style="font-family:var(--font-body);font-weight:700;text-transform:none;letter-spacing:0;font-size:1.3rem" data-i18n="contact.formTitle">Send Us A Message</h3>
+          <form data-mailto data-subject="New message from Nid'Z website">
+            <div class="form-row">
+              <div class="field">
+                <label for="c-name" data-i18n="contact.fullName">Full Name</label>
+                <input type="text" id="c-name" name="name" data-i18n-placeholder="contact.namePh" placeholder="Your name" required>
+              </div>
+              <div class="field">
+                <label for="c-phone" data-i18n="contact.phone">Phone</label>
+                <input type="tel" id="c-phone" name="phone" data-i18n-placeholder="contact.phonePh" placeholder="+995 5XX XXX XXX">
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-email" data-i18n="contact.email">Email</label>
+              <input type="email" id="c-email" name="email" data-i18n-placeholder="contact.emailPh" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="c-subject" data-i18n="contact.subject">Subject</label>
+              <input type="text" id="c-subject" name="subject" data-i18n-placeholder="contact.subjectPh" placeholder="How can we help?">
+            </div>
+            <div class="field">
+              <label for="c-message" data-i18n="contact.message">Message</label>
+              <textarea id="c-message" name="message" data-i18n-placeholder="contact.messagePh" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-flame btn-block" data-i18n="contact.sendBtn">Send Message</button>
+            <p class="form-note" data-i18n="contact.formNote">Submitting opens your email app with this message ready to send to nidsrestaurant@gmail.com.</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="reveal in" style="--i:1">
+        <div class="info-tile">
+          <div class="ico">📞</div>
+          <div><h4 data-i18n="contact.callUs">Call Us</h4><a href="tel:+995571530290">+995 571 530 290</a></div>
+        </div>
+        <div class="info-tile">
+          <div class="ico">💬</div>
+          <div><h4 data-i18n="contact.whatsapp">WhatsApp</h4><a href="https://wa.me/995571530290" target="_blank" rel="noopener" data-i18n="contact.whatsappDesc">Chat with us instantly</a></div>
+        </div>
+        <div class="info-tile">
+          <div class="ico">✉️</div>
+          <div><h4 data-i18n="contact.emailUs">Email</h4><a href="mailto:nidsrestaurant@gmail.com">nidsrestaurant@gmail.com</a></div>
+        </div>
+        <div class="info-tile">
+          <div class="ico">📍</div>
+          <div><h4 data-i18n="contact.address">Address</h4><p data-i18n="contact.addressVal">Batumi, Adjara, Georgia</p><a href="https://maps.app.goo.gl/QMnDL4wzaChyBcsp8" target="_blank" rel="noopener" style="color:var(--gold)" data-i18n="common.getDirections">Get Directions →</a></div>
+        </div>
+        <div class="info-tile" style="margin-bottom:0">
+          <div class="ico">🕐</div>
+          <div style="width:100%">
+            <h4 data-i18n="contact.hours">Opening Hours</h4>
+            <table class="hours-table">
+              <tr><td data-i18n="contact.h1">Monday – Thursday</td><td>11:00 – 23:00</td></tr>
+              <tr><td data-i18n="contact.h2">Friday – Saturday</td><td>11:00 – 00:30</td></tr>
+              <tr><td data-i18n="contact.h3">Sunday</td><td>12:00 – 23:00</td></tr>
+            </table>
+            <p class="form-note" data-i18n="contact.hoursNote">Hours may vary on holidays — call ahead to confirm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="contact.mapEyebrow">Find Us</p>
+        <h2 data-i18n="contact.mapTitle">On The Map</h2>
+      </div>
+      <div class="map-frame reveal in">
+        <iframe src="https://www.google.com/maps?q=Nid%27Z%20Restaurant%20Batumi&output=embed" loading="lazy" title="Nid'Z Restaurant location on Google Maps"></iframe>
+      </div>
+      <div class="text-center mt-40">
+        <a href="https://maps.app.goo.gl/QMnDL4wzaChyBcsp8" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="common.getDirections">Get Directions</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+          <span class="brand-word">NID<span style="color:var(--red)">'</span>Z</span>
+        </div>
+        <p data-i18n="footer.taglineShort">Flame-grilled shawarma, kabab and loaded rolls, made fresh in Batumi.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.getInTouch">Get In Touch</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+995571530290">+995 571 530 290</a></li>
+          <li><a href="mailto:nidsrestaurant@gmail.com">nidsrestaurant@gmail.com</a></li>
+          <li><a href="https://wa.me/995571530290" target="_blank" rel="noopener" data-i18n="common.whatsappUs">WhatsApp Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.findUs">Find Us</h4>
+        <div class="map-frame"><iframe src="https://www.google.com/maps?q=Nid%27Z%20Restaurant%20Batumi&output=embed" loading="lazy" style="height:170px" title="Nid'Z Restaurant location"></iframe></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year"></span> Nid'Z Restaurant. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <div class="footer-legal"><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
