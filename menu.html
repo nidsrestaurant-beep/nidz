@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('nidz_lang')||'en';document.documentElement.lang=l;document.documentElement.dir=(l==='ar')?'rtl':'ltr';}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Nid'Z Restaurant</title>
+<meta name="description" content="Explore the full Nid'Z Restaurant menu — flame-grilled shawarma, kabab, chicken tawook, falafel and loaded rolls, made fresh in Batumi.">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Cairo:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="preloader" aria-hidden="true"><img src="assets/img/logo.jpg" alt="" class="loader-flame"></div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+      <span class="brand-word">NID<span>'</span>Z</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="menu.html" class="active" data-i18n="nav.menu">Menu</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch"></div>
+      <a href="order.html" class="btn btn-flame btn-sm" data-i18n="nav.orderNow">Order Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="menu.html" data-i18n="nav.menu">Menu</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+  <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
+  <a href="order.html" class="btn btn-flame" data-i18n="nav.orderNow">Order Now</a>
+  <div class="lang-switch"></div>
+</div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow" data-i18n="menu.eyebrow">Fresh Off The Grill</p>
+      <h1 data-i18n="menu.title">Our Menu</h1>
+      <p class="breadcrumb"><a href="index.html" data-i18n="common.home">Home</a> / <span data-i18n="menu.crumb">Menu</span></p>
+    </div>
+  </section>
+
+  <!-- Dish grid built from menu data -->
+  <section class="section section-tight">
+    <div class="container">
+      <div class="filter-row" id="menu-filters"></div>
+      <div class="grid grid-3" id="menu-grid"></div>
+      <div class="text-center mt-40">
+        <a href="order.html" class="btn btn-flame" data-i18n="menu.orderOnline">Order Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded full menu -->
+  <section class="section" style="background:var(--charcoal)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="menu.embedEyebrow">Full Interactive Menu</p>
+        <h2 data-i18n="menu.embedTitle">Browse Every Item &amp; Price</h2>
+        <p data-i18n="menu.embedDesc">Our complete, always up-to-date menu — prices, combos and daily specials.</p>
+      </div>
+      <div class="delivery-card reveal in">
+        <span class="delivery-ico" aria-hidden="true">📋</span>
+        <p data-i18n="menu.embedNote">See our full interactive menu, always kept up to date with the latest prices and specials.</p>
+        <a href="https://nidz.tilda.ws" target="_blank" rel="noopener" class="btn btn-flame" data-i18n="menu.embedLink">Open Full Menu →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+          <span class="brand-word">NID<span style="color:var(--red)">'</span>Z</span>
+        </div>
+        <p data-i18n="footer.taglineShort">Flame-grilled shawarma, kabab and loaded rolls, made fresh in Batumi.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="reviews.html" data-i18n="nav.reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.getInTouch">Get In Touch</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+995571530290">+995 571 530 290</a></li>
+          <li><a href="mailto:nidsrestaurant@gmail.com">nidsrestaurant@gmail.com</a></li>
+          <li><a href="https://wa.me/995571530290" target="_blank" rel="noopener" data-i18n="common.whatsappUs">WhatsApp Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.findUs">Find Us</h4>
+        <div class="map-frame"><iframe src="https://www.google.com/maps?q=Nid%27Z%20Restaurant%20Batumi&output=embed" loading="lazy" style="height:170px" title="Nid'Z Restaurant location"></iframe></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year"></span> Nid'Z Restaurant. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <div class="footer-legal"><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a><a href="terms.html" data-i18n="footer.terms">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
