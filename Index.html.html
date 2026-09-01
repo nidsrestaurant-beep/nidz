@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var l=localStorage.getItem('nidz_lang')||'en';document.documentElement.lang=l;document.documentElement.dir=(l==='ar')?'rtl':'ltr';}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nid'Z Restaurant — Flame-Grilled Shawarma & Rolls in Batumi</title>
+<meta name="description" content="Nid'Z Restaurant in Batumi — flame-grilled shawarma, kabab, chicken tawook and loaded rolls made fresh daily.">
+<meta name="theme-color" content="#0a0908">
+<link rel="canonical" href="https://nidzrestaurant.com/">
+<meta property="og:title" content="Nid'Z Restaurant — Flame-Grilled Shawarma & Rolls in Batumi">
+<meta property="og:description" content="Fresh ingredients. Authentic taste. Flame-grilled shawarma, kabab and loaded rolls in Batumi.">
+<meta property="og:image" content="assets/img/nidz-special-shawarma.jpg">
+<meta property="og:type" content="restaurant.restaurant">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Cairo:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --charcoal: #0a0908;
+  --dark: #1a1410;
+  --red: #c0392b;
+  --red-dark: #922b21;
+  --gold: #f1c40f;
+  --gold-dim: #d4a814;
+  --text: #f5eee6;
+  --muted: #a89f94;
+  --font-display: 'Anton', sans-serif;
+  --font-heading: 'Permanent Marker', cursive;
+  --font-body: 'Work Sans', sans-serif;
+  --font-arabic: 'Cairo', sans-serif;
+}
+
+/* ===== RESET & BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--charcoal);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #fff; }
+
+/* ===== CONTAINER ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== SKIP LINK ===== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  z-index: 999;
+}
+.skip-link:focus { top: 16px; }
+
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+#preloader.hide { opacity: 0; pointer-events: none; }
+.loader-flame {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(241, 196, 15, 0.2);
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 12px 0;
+  background: rgba(10, 9, 8, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.3s;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.brand-word { color: #fff; }
+.brand-word span { color: var(--red); }
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.nav-links a {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.nav-links a.active { color: var(--gold); }
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--charcoal);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav a {
+  font-size: 1.4rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.mobile-nav a:hover { color: #fff; }
+.mobile-nav .btn { font-size: 1rem; padding: 12px 36px; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-body);
+  text-align: center;
+}
+.btn-flame {
+  background: linear-gradient(145deg, var(--gold), var(--gold-dim));
+  color: var(--charcoal);
+  box-shadow: 0 6px 24px rgba(241, 196, 15, 0.3);
+}
+.btn-flame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(241, 196, 15, 0.4);
+  color: var(--charcoal);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(241, 196, 15, 0.05);
+}
+.btn-sm { padding: 8px 18px; font-size: 0.8rem; }
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switch {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--muted);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: var(--font-body);
+}
+.lang-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--charcoal);
+}
+.mobile-nav .lang-switch { margin-top: 16px; }
+.mobile-nav .lang-btn {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.15);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+}
+.mobile-nav .lang-btn.active {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+[dir="rtl"] .lang-btn { font-family: var(--font-arabic); }
+[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
+[dir="rtl"] .brand { flex-direction: row-reverse; }
+[dir="rtl"] .hero-inner { text-align: right; }
+[dir="rtl"] .hero-ctas { justify-content: center; flex-direction: row-reverse; }
+[dir="rtl"] .grid { direction: rtl; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 60px;
+  background: linear-gradient(180deg, var(--charcoal) 0%, #1a1410 100%);
+  overflow: hidden;
+}
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+.flame-ember {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: emberFloat 6s ease-in-out infinite;
+}
+.e1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(241, 196, 15, 0.08);
+  top: 10%;
+  left: -5%;
+}
+.e2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(192, 57, 43, 0.06);
+  bottom: -10%;
+  right: -5%;
+  animation-delay: 3s;
+}
+@keyframes emberFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.hero-inner { position: relative; z-index: 2; max-width: 800px; }
+.hero-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  object-fit: cover;
+  box-shadow: 0 0 60px rgba(241, 196, 15, 0.15);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.hero h1 span { display: block; }
+.hero h1 span:first-child { color: var(--gold); }
+.hero .lede {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 20px auto 32px;
+  font-weight: 400;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+.scroll-cue .line {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--muted), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* ===== TICKER ===== */
+.ticker {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 0;
+  overflow: hidden;
+}
+.ticker-track {
+  display: flex;
+  gap: 60px;
+  animation: tickerScroll 30s linear infinite;
+  white-space: nowrap;
+}
+.ticker-track span {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.ticker-track span::before { content: "✦ "; color: var(--gold); }
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== SECTIONS ===== */
+.section { padding: 70px 0; }
+.section-tight { padding: 50px 0; }
+.section-head { margin-bottom: 48px; }
+.section-head.center { text-align: center; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.eyebrow::before {
+  content: "—";
+  color: var(--gold);
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.1;
+}
+.section-head p { color: var(--muted); max-width: 600px; margin-top: 12px; }
+.section-head.center p { margin-left: auto; margin-right: auto; }
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  gap: 28px;
+}
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger .reveal { transition-delay: calc(var(--i, 0) * 0.12s); }
+
+/* ===== FEATURES ===== */
+.feature {
+  text-align: center;
+  padding: 32px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s;
+}
+.feature:hover { background: rgba(255, 255, 255, 0.06); }
+.feature .ico { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+.feature h3 { color: #fff; margin-bottom: 6px; font-family: var(--font-body); font-weight: 700; text-transform: none; font-size: 1.05rem; letter-spacing: 0; }
+.feature p { color: var(--muted); font-size: 0.9rem; }
+
+/* ===== TESTIMONIALS ===== */
+.testi-slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.testi-slide {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+.testi-slide.active { display: block; }
+.testi-stars {
+  color: var(--gold);
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+.testi-quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.testi-name { font-weight: 600; color: #fff; }
+.testi-role { font-size: 0.8rem; color: var(--muted); }
+.testi-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.testi-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.testi-dots button.active { background: var(--gold); }
+
+/* ===== REVIEW SUMMARY ===== */
+.review-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.review-score { text-align: center; }
+.review-score .stars { font-size: 2rem; color: var(--gold); }
+.review-score .sub { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.review-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.review-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.review-link:hover { background: rgba(255, 255, 255, 0.1); color: var(--gold); }
+
+/* ===== SOCIAL ===== */
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.social-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+  border-color: rgba(241, 196, 15, 0.2);
+}
+.social-pill .icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+.social-pill .icon svg { width: 100%; height: 100%; }
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  text-align: center;
+  padding: 50px 40px;
+  background: linear-gradient(145deg, rgba(241, 196, 15, 0.06), rgba(241, 196, 15, 0.02));
+  border-radius: 24px;
+  border: 1px solid rgba(241, 196, 15, 0.1);
+}
+.cta-banner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  text-transform: uppercase;
+  color: #fff;
+}
+.cta-banner p { color: var(--muted); margin: 12px 0 24px; }
+
+/* ===== DISH CARDS ===== */
+.dish-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s;
+}
+.dish-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(241, 196, 15, 0.15);
+}
+.dish-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.dish-card-body { padding: 20px; }
+.dish-card-body h3 { color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
+.dish-card-body .cat {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+  font-weight: 600;
+}
+.dish-card-body p { color: var(--muted); font-size: 0.9rem; margin: 8px 0 12px; }
+.dish-card-body .price {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+/* ===== FORM NOTE ===== */
+.form-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.mt-40 { margin-top: 40px; }
+.text-center { text-align: center; }
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: #0a0908;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 48px 0 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.footer-grid p { color: var(--muted); font-size: 0.9rem; max-width: 300px; }
+.footer-grid h4 {
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.footer-links {
+  list-style: none;
+}
+.footer-links li { margin-bottom: 6px; }
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #fff; }
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+.footer-legal a { color: var(--muted); font-size: 0.8rem; }
+.footer-legal a:hover { color: #fff; }
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+  padding: 140px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--charcoal), #1a1410);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.page-hero .breadcrumb {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+.page-hero .breadcrumb a { color: var(--muted); }
+.page-hero .breadcrumb a:hover { color: var(--gold); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-grid p { max-width: 100%; }
+  .footer-brand { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .review-summary { flex-direction: column; text-align: center; }
+  .review-links { justify-content: center; }
+  .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .section { padding: 40px 0; }
+  .cta-banner { padding: 30px 20px; }
+}
+@media (max-width: 480px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+  .brand-word { font-size: 1.2rem; }
+  .brand img { width: 32px; height: 32px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Nid'Z Restaurant",
+  "image": "assets/img/nidz-special-shawarma.jpg",
+  "servesCuisine": ["Lebanese", "Shawarma", "Street Food"],
+  "priceRange": "GEL 8–18",
+  "telephone": "+995571530290",
+  "email": "nidsrestaurant@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Batumi", "addressRegion": "Adjara", "addressCountry": "GE" },
+  "sameAs": [
+    "https://www.instagram.com/nidzrestaurant/",
+    "https://www.tiktok.com/@nidsrestaurant?lang=en",
+    "https://www.tripadvisor.com/Restaurant_Review-g297576-d32878680-Reviews-Nid_z_Restaurant-Batumi_Adjara_Region.html"
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="preloader" aria-hidden="true">
+  <img src="assets/img/logo.jpg" alt="" class="loader-flame">
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+      <span class="brand-word">NID<span>'</span>Z</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+      <a href="menu.html" data-i18n="nav.menu">Menu</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch"></div>
+      <a href="order.html" class="btn btn-flame btn-sm" data-i18n="nav.orderNow">Order Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="menu.html" data-i18n="nav.menu">Menu</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+  <a href="reviews.html" data-i18n="nav.reviews">Reviews</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
+  <a href="order.html" class="btn btn-flame" data-i18n="nav.orderNow">Order Now</a>
+  <div class="lang-switch"></div>
+</div>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-noise"></div>
+    <div class="flame-ember e1"></div>
+    <div class="flame-ember e2"></div>
+    <div class="container hero-inner">
+      <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo" class="hero-logo">
+      <h1><span data-i18n="home.heroTitle1">Fresh Fire.</span><br><span data-i18n="home.heroTitle2">Real Flavor.</span></h1>
+      <p class="lede" data-i18n="home.heroLede">Flame-grilled shawarma, kabab and loaded rolls, wrapped fresh to order in the heart of Batumi.</p>
+      <div class="hero-ctas">
+        <a href="order.html" class="btn btn-flame" data-i18n="home.orderNow">🔥 Order Now</a>
+        <a href="menu.html" class="btn btn-outline" data-i18n="home.viewMenu">View Menu</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span data-i18n="home.scroll">Scroll</span><span class="line"></span></div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker" role="presentation">
+    <div class="ticker-track">
+      <span data-i18n="home.tickerFresh">Grilled Fresh Daily</span><span data-i18n="home.tickerSpecial">Nid'Z Special Shawarma</span><span data-i18n="home.tickerBeast">Beast Shawarma</span><span data-i18n="home.tickerReal">Real Ingredients, Authentic Taste</span><span data-i18n="home.tickerMade">Made Fresh</span><span data-i18n="home.tickerFlame">Batumi's Flame</span>
+      <span data-i18n="home.tickerFresh">Grilled Fresh Daily</span><span data-i18n="home.tickerSpecial">Nid'Z Special Shawarma</span><span data-i18n="home.tickerBeast">Beast Shawarma</span><span data-i18n="home.tickerReal">Real Ingredients, Authentic Taste</span><span data-i18n="home.tickerMade">Made Fresh</span><span data-i18n="home.tickerFlame">Batumi's Flame</span>
+    </div>
+  </div>
+
+  <!-- ===== FEATURED DISHES ===== -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="home.featuredEyebrow">On The Grill</p>
+        <h2 data-i18n="home.featuredTitle">Featured Dishes</h2>
+        <p data-i18n="home.featuredDesc">A taste of what comes off the flame every day — built layer by layer, never rushed.</p>
+      </div>
+      <div class="grid grid-3" id="featured-grid"></div>
+      <div class="text-center mt-40">
+        <a href="menu.html" class="btn btn-outline" data-i18n="home.seeFullMenu">See Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="section section-tight" style="background:var(--charcoal)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="home.whyEyebrow">Why Nid'Z</p>
+        <h2 data-i18n="home.whyTitle">Built On The Fire, Not The Shortcut</h2>
+      </div>
+      <div class="grid grid-4 reveal-stagger">
+        <div class="feature reveal in" style="--i:0">
+          <div class="ico">🔥</div>
+          <h3 data-i18n="home.f1Title">Grilled To Order</h3>
+          <p data-i18n="home.f1Desc">Every skewer and cutlet hits the flame only after you order — no reheating, no shortcuts.</p>
+        </div>
+        <div class="feature reveal in" style="--i:1">
+          <div class="ico">🥬</div>
+          <h3 data-i18n="home.f2Title">Fresh Ingredients</h3>
+          <p data-i18n="home.f2Desc">Vegetables cut daily, sauces made in-house, bread baked warm — nothing sits around.</p>
+        </div>
+        <div class="feature reveal in" style="--i:2">
+          <div class="ico">⚡</div>
+          <h3 data-i18n="home.f3Title">Fast, Friendly Service</h3>
+          <p data-i18n="home.f3Desc">Quick without feeling rushed — order in, wrapped up, and out the door hot.</p>
+        </div>
+        <div class="feature reveal in" style="--i:3">
+          <div class="ico">👨‍👩‍👧‍👦</div>
+          <h3 data-i18n="home.f4Title">Family-Friendly</h3>
+          <p data-i18n="home.f4Desc">A relaxed spot in Batumi for a quick bite or a full sit-down table with the whole crew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY PREVIEW ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="home.galleryEyebrow">Behind The Wrap</p>
+        <h2 data-i18n="home.galleryTitle">A Peek Inside The Kitchen</h2>
+      </div>
+      <div class="grid grid-4">
+        <img class="reveal in" style="border-radius:14px;aspect-ratio:3/4;object-fit:cover" src="assets/img/thumb/beast-shawarma.jpg" alt="Beast Shawarma close-up" loading="lazy" width="300" height="400">
+        <img class="reveal in" style="--i:1;border-radius:14px;aspect-ratio:3/4;object-fit:cover" src="assets/img/thumb/kabab.jpg" alt="Grilled kabab skewers" loading="lazy" width="300" height="400">
+        <img class="reveal in" style="--i:2;border-radius:14px;aspect-ratio:3/4;object-fit:cover" src="assets/img/thumb/falafel-roll.jpg" alt="Falafel roll" loading="lazy" width="300" height="400">
+        <img class="reveal in" style="--i:3;border-radius:14px;aspect-ratio:3/4;object-fit:cover" src="assets/img/thumb/phoenix.jpg" alt="Phoenix wrap" loading="lazy" width="300" height="400">
+      </div>
+      <div class="text-center mt-40">
+        <a href="gallery.html" class="btn btn-outline" data-i18n="home.viewFullGallery">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section section-tight" style="background:var(--charcoal)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow" data-i18n="home.testiEyebrow">Guests Say</p>
+        <h2 data-i18n="home.testiTitle">Straight From The Table</h2>
+      </div>
+      <div class="testi-slider reveal in">
+        <div class="testi-slide active">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote" data-i18n="home.t1q">"The Beast Shawarma lives up to its name — massive, hot, and packed with flavor. Best wrap I've had in Batumi."</p>
+          <div class="testi-name" data-i18n="home.t1n">Nina K.</div>
+          <div class="testi-role" data-i18n="home.t1r">Local Guide</div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote" data-i18n="home.t2q">"Fast, friendly, and the garlic sauce is addictive. We came back three times during our trip."</p>
+          <div class="testi-name" data-i18n="home.t2n">Levan T.</div>
+          <div class="testi-role" data-i18n="home.t2r">Regular Guest</div>
+        </div>
+        <div class="testi-slide">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote" data-i18n="home.t3q">"Family-friendly, generous portions, and everything tastes genuinely fresh. The Phoenix is a must-try."</p>
+          <div class="testi-name" data-i18n="home.t3n">Sofia M.</div>
+          <div class="testi-role" data-i18n="home.t3r">Tourist Review</div>
+        </div>
+      </div>
+      <div class="testi-dots"></div>
+      <p class="form-note text-center mt-40" data-i18n="home.testiNote">Sample guest quotes shown for demonstration — swap in your real reviews any time.</p>
+    </div>
+  </section>
+
+  <!-- ===== REVIEW SUMMARY ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="review-summary reveal in">
+        <div class="review-score">
+          <div class="stars">★★★★★</div>
+          <div class="sub" data-i18n="home.reviewSub">Rated by our guests</div>
+        </div>
+        <div class="review-links">
+          <a class="review-link" href="https://maps.app.goo.gl/QMnDL4wzaChyBcsp8" target="_blank" rel="noopener">
+            <span>🟡</span> <span data-i18n="home.reviewGoogle">See our Google Reviews</span>
+          </a>
+          <a class="review-link" href="https://www.tripadvisor.com/Restaurant_Review-g297576-d32878680-Reviews-Nid_z_Restaurant-Batumi_Adjara_Region.html" target="_blank" rel="noopener">
+            <span>🦉</span> <span data-i18n="home.reviewTrip">Read us on TripAdvisor</span>
+          </a>
+          <a class="review-link" href="reviews.html">
+            <span>💬</span> <span data-i18n="home.reviewAll">All Reviews</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL ===== -->
+  <section class="section section-tight" style="background:var(--charcoal)">
+    <div class="container text-center">
+      <p class="eyebrow" style="justify-content:center" data-i18n="home.followEyebrow">Follow The Flame</p>
+      <h2>@nidzrestaurant</h2>
+      <div class="social-row mt-40">
+        <a class="social-pill" href="https://www.instagram.com/nidzrestaurant/" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+          <span data-i18n="home.socialInstagram">Instagram</span>
+        </a>
+        <a class="social-pill" href="https://www.tiktok.com/@nidsrestaurant?lang=en" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3c.4 2 2 3.6 4 4v3c-1.5 0-3-.5-4-1.3V15a5.5 5.5 0 1 1-5-5.5v3.1a2.4 2.4 0 1 0 2 2.4V3h3z"/></svg></span>
+          <span data-i18n="home.socialTiktok">TikTok</span>
+        </a>
+        <a class="social-pill" href="https://www.tripadvisor.com/Restaurant_Review-g297576-d32878680-Reviews-Nid_z_Restaurant-Batumi_Adjara_Region.html" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7.5" cy="13.5" r="4"/><circle cx="16.5" cy="13.5" r="4"/><path d="M12 8.5c-2.5-2-6-2.2-9-.5M12 8.5c2.5-2 6-2.2 9-.5M12 8.5v1"/></svg></span>
+          <span data-i18n="home.socialTrip">TripAdvisor</span>
+        </a>
+        <a class="social-pill" href="https://maps.app.goo.gl/QMnDL4wzaChyBcsp8" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          <span data-i18n="home.socialMaps">Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal in">
+        <h2 data-i18n="home.ctaTitle">Hungry Yet?</h2>
+        <p data-i18n="home.ctaDesc">Order online for pickup or delivery, or swing by and let us fire up the grill for you.</p>
+        <div class="hero-ctas">
+          <a href="order.html" class="btn btn-flame" data-i18n="home.ctaOrder">Order Online</a>
+          <a href="menu.html" class="btn btn-outline" data-i18n="home.viewMenu">View Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.jpg" alt="Nid'Z Restaurant logo">
+          <span class="brand-word">NID<span style="color:var(--red)">'</span>Z</span>
+        </div>
+        <p data-i18n="footer.tagline">Flame-grilled shawarma, kabab and loaded rolls, made fresh in Batumi — real ingredients, authentic taste.</p>
+        <div class="social-row" style="justify-content:flex-start;gap:10px">
+          <a class="social-pill" style="padding:10px" href="https://www.instagram.com/nidzrestaurant/" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon" style="width:18px;height:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span></a>
+          <a class="social-pill" style="padding:10px" href="https://www.tiktok.com/@nidsrestaurant?lang=en" target="_blank" rel="noopener" aria-label="TikTok"><span class="icon" style="width:18px;height:18px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3c.4 2 2 3.6 4 4v3c-1.5 0-3-.5-4-1.3V15a5.5 5.5 0 1 1-5-5.5v3.1a2.4 2.4 0 1 0 2 2.4V3h3z"/></svg></span></a>
+          <a class="social-pill" style="padding:10px" href="https://www.tripadvisor.com/Restaurant_Review-g297576-d32878680-Reviews-Nid_z_Restaurant-Batumi_Adjara_Region.html" target="_blank" rel="noopener" aria-label="TripAdvisor"><span class="icon" style="width:18px;height:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7.5" cy="13.5" r="4"/><circle cx="16.5" cy="13.5" r="4"/><path d="M12 8.5c-2.5-2-6-2.2-9-.5M12 8.5c2.5-2 6-2.2 9-.5M12 8.5v1"/></svg></span></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="reviews.html" data-i18n="nav.reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.getInTouch">Get In Touch</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+995571530290">+995 571 530 290</a></li>
+          <li><a href="mailto:nidsrestaurant@gmail.com">nidsrestaurant@gmail.com</a></li>
+          <li><a href="https://wa.me/995571530290" target="_blank" rel="noopener" data-i18n="common.whatsappUs">WhatsApp Us</a></li>
+          <li><a href="https://maps.app.goo.gl/QMnDL4wzaChyBcsp8" target="_blank" rel="noopener" data-i18n="contact.addressVal">Batumi, Adjara, Georgia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.findUs">Find Us</h4>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=Nid%27Z%20Restaurant%20Batumi&output=embed" loading="lazy" style="height:170px;width:100%;border:0;border-radius:12px;" title="Nid'Z Restaurant location"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year"></span> Nid'Z Restaurant. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <div class="footer-legal">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/995571530290" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px -6px rgba(37,211,102,.6);">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
+
+<script>
+// ===== CONFIG =====
+const NIDZ = {
+  languages: ['en', 'ru', 'ka', 'ar'],
+  defaultLang: 'en',
+  langNames: {
+    en: 'English',
+    ru: 'Русский',
+    ka: 'ქართული',
+    ar: 'العربية'
+  },
+  woltLink: 'https://wolt.com/en/geo/batumi/restaurant/nidz',
+  phone: '+995571530290',
+  email: 'nidsrestaurant@gmail.com',
+  whatsapp: 'https://wa.me/995571530290'
+};
+
+// ===== TRANSLATIONS =====
+const translations = {
+  en: {
+    'nav.home': 'Home','nav.menu': 'Menu','nav.about': 'About','nav.gallery': 'Gallery','nav.reviews': 'Reviews','nav.contact': 'Contact','nav.orderNow': 'Order Now',
+    'common.home': 'Home','common.whatsappUs': 'WhatsApp Us','common.getDirections': 'Get Directions →',
+    'home.heroTitle1': 'Fresh Fire.','home.heroTitle2': 'Real Flavor.','home.heroLede': 'Flame-grilled shawarma, kabab and loaded rolls, wrapped fresh to order in the heart of Batumi.','home.orderNow': '🔥 Order Now','home.viewMenu': 'View Menu','home.scroll': 'Scroll',
+    'home.tickerFresh': 'Grilled Fresh Daily','home.tickerSpecial': "Nid'Z Special Shawarma",'home.tickerBeast': 'Beast Shawarma','home.tickerReal': 'Real Ingredients, Authentic Taste','home.tickerMade': 'Made Fresh','home.tickerFlame': "Batumi's Flame",
+    'home.featuredEyebrow': 'On The Grill','home.featuredTitle': 'Featured Dishes','home.featuredDesc': 'A taste of what comes off the flame every day — built layer by layer, never rushed.','home.seeFullMenu': 'See Full Menu',
+    'home.whyEyebrow': "Why Nid'Z",'home.whyTitle': 'Built On The Fire, Not The Shortcut',
+    'home.f1Title': 'Grilled To Order','home.f1Desc': 'Every skewer and cutlet hits the flame only after you order — no reheating, no shortcuts.',
+    'home.f2Title': 'Fresh Ingredients','home.f2Desc': 'Vegetables cut daily, sauces made in-house, bread baked warm — nothing sits around.',
+    'home.f3Title': 'Fast, Friendly Service','home.f3Desc': 'Quick without feeling rushed — order in, wrapped up, and out the door hot.',
+    'home.f4Title': 'Family-Friendly','home.f4Desc': 'A relaxed spot in Batumi for a quick bite or a full sit-down table with the whole crew.',
+    'home.galleryEyebrow': 'Behind The Wrap','home.galleryTitle': 'A Peek Inside The Kitchen','home.viewFullGallery': 'View Full Gallery',
+    'home.testiEyebrow': 'Guests Say','home.testiTitle': 'Straight From The Table',
+    'home.t1q': '"The Beast Shawarma lives up to its name — massive, hot, and packed with flavor. Best wrap I\'ve had in Batumi."','home.t1n': 'Nina K.','home.t1r': 'Local Guide',
+    'home.t2q': '"Fast, friendly, and the garlic sauce is addictive. We came back three times during our trip."','home.t2n': 'Levan T.','home.t2r': 'Regular Guest',
+    'home.t3q': '"Family-friendly, generous portions, and everything tastes genuinely fresh. The Phoenix is a must-try."','home.t3n': 'Sofia M.','home.t3r': 'Tourist Review',
+    'home.testiNote': 'Sample guest quotes shown for demonstration — swap in your real reviews any time.',
+    'home.reviewSub': 'Rated by our guests','home.reviewGoogle': 'See our Google Reviews','home.reviewTrip': 'Read us on TripAdvisor','home.reviewAll': 'All Reviews',
+    'home.followEyebrow': 'Follow The Flame','home.socialInstagram': 'Instagram','home.socialTiktok': 'TikTok','home.socialTrip': 'TripAdvisor','home.socialMaps': 'Google Maps',
+    'home.ctaTitle': 'Hungry Yet?','home.ctaDesc': 'Order online for pickup or delivery, or swing by and let us fire up the grill for you.','home.ctaOrder': 'Order Online',
+    'footer.tagline': 'Flame-grilled shawarma, kabab and loaded rolls, made fresh in Batumi — real ingredients, authentic taste.','footer.taglineShort': 'Flame-grilled shawarma, kabab and loaded rolls, made fresh in Batumi.',
+    'footer.quickLinks': 'Quick Links','footer.getInTouch': 'Get In Touch','footer.findUs': 'Find Us','footer.rights': 'All rights reserved.','footer.privacy': 'Privacy Policy','footer.terms': 'Terms of Service'
+  },
+  ru: {
+    'nav.home': 'Главная','nav.menu': 'Меню','nav.about': 'О нас','nav.gallery': 'Галерея','nav.reviews': 'Отзывы','nav.contact': 'Контакты','nav.orderNow': 'Заказать',
+    'common.home': 'Главная','common.whatsappUs': 'Написать в WhatsApp','common.getDirections': 'Как добраться →',
+    'home.heroTitle1': 'Свежий огонь.','home.heroTitle2': 'Настоящий вкус.','home.heroLede': 'Шаурма на гриле, кебаб и сытные роллы, приготовленные свежими по заказу в самом сердце Батуми.','home.orderNow': '🔥 Заказать','home.viewMenu': 'Меню','home.scroll': 'Листайте',
+    'home.tickerFresh': 'Свежее каждый день','home.tickerSpecial': "Nid'Z Special Шаурма",'home.tickerBeast': 'Beast Шаурма','home.tickerReal': 'Настоящие ингредиенты, аутентичный вкус','home.tickerMade': 'Свежее приготовление','home.tickerFlame': 'Огонь Батуми',
+    'home.featuredEyebrow': 'На гриле','home.featuredTitle': 'Фирменные блюда','home.featuredDesc': 'Вкус, который каждый день рождается на огне — слой за слоем, без спешки.','home.seeFullMenu': 'Полное меню',
+    'home.whyEyebrow': "Почему Nid'Z",'home.whyTitle': 'Создано на огне, а не на скорую руку',
+    'home.f1Title': 'Готовится по заказу','home.f1Desc': 'Каждый шампур и кусочек мяса попадает на огонь только после вашего заказа — без разогрева и сокращений.',
+    'home.f2Title': 'Свежие ингредиенты','home.f2Desc': 'Овощи нарезаются ежедневно, соусы готовятся вручную, хлеб выпекается теплым — ничего не залеживается.',
+    'home.f3Title': 'Быстрое, дружелюбное обслуживание','home.f3Desc': 'Быстро, но без спешки — заказ, упаковка и горячее блюдо на выход.',
+    'home.f4Title': 'Для всей семьи','home.f4Desc': 'Уютное место в Батуми для быстрого перекуса или полноценного обеда с семьей.',
+    'home.galleryEyebrow': 'За кулисами','home.galleryTitle': 'Взгляд на кухню','home.viewFullGallery': 'Полная галерея',
+    'home.testiEyebrow': 'Гости говорят','home.testiTitle': 'Прямо с места событий',
+    'home.t1q': '"Beast Шаурма оправдывает свое название — огромная, горячая и полная вкуса. Лучшая шаурма в Батуми."','home.t1n': 'Нина К.','home.t1r': 'Местный гид',
+    'home.t2q': '"Быстро, приветливо, а чесночный соус просто бомба. За время поездки вернулись трижды."','home.t2n': 'Леван Т.','home.t2r': 'Постоянный гость',
+    'home.t3q': '"Атмосфера для семьи, большие порции и все действительно свежее. Phoenix — обязателен к пробе."','home.t3n': 'София М.','home.t3r': 'Отзыв туриста',
+    'home.testiNote': 'Показаны примеры отзывов — замените их на реальные в любое время.',
+    'home.reviewSub': 'Оценено нашими гостями','home.reviewGoogle': 'Отзывы на Google','home.reviewTrip': 'Читайте на TripAdvisor','home.reviewAll': 'Все отзывы',
+    'home.followEyebrow': 'Подпишитесь','home.socialInstagram': 'Instagram','home.socialTiktok': 'TikTok','home.socialTrip': 'TripAdvisor','home.socialMaps': 'Google Maps',
+    'home.ctaTitle': 'Уже голодны?','home.ctaDesc': 'Закажите онлайн на самовывоз или доставку, или загляните к нам — мы разожжем гриль для вас.','home.ctaOrder': 'Заказать онлайн',
+    'footer.tagline': 'Шаурма на гриле, кебаб и сытные роллы, приготовленные свежими в Батуми — настоящие ингредиенты, аутентичный вкус.','footer.taglineShort': 'Шаурма на гриле, кебаб и сытные роллы, приготовленные свежими в Батуми.',
+    'footer.quickLinks': 'Быстрые ссылки','footer.getInTouch': 'Свяжитесь с нами','footer.findUs': 'Найдите нас','footer.rights': 'Все права защищены.','footer.privacy': 'Политика конфиденциальности','footer.terms': 'Условия использования'
+  },
+  ka: {
+    'nav.home': 'მთავარი','nav.menu': 'მენიუ','nav.about': 'ჩვენს შესახებ','nav.gallery': 'გალერეა','nav.reviews': 'მიმოხილვები','nav.contact': 'კონტაქტი','nav.orderNow': 'შეკვეთა',
+    'common.home': 'მთავარი','common.whatsappUs': 'WhatsApp-ით მოგვწერეთ','common.getDirections': 'მისამართი →',
+    'home.heroTitle1': 'ახალი ცეცხლი.','home.heroTitle2': 'ნამდვილი გემო.','home.heroLede': 'ცეცხლზე შემწვარი შაურმა, ქაბაბი და შეფუთული რულეტები, ახალი მომზადებული ბათუმის გულში.','home.orderNow': '🔥 შეკვეთა','home.viewMenu': 'მენიუს ნახვა','home.scroll': 'გადაახვიე',
+    'home.tickerFresh': 'ყოველდღიურად ახალი','home.tickerSpecial': "Nid'Z სპეციალური შაურმა",'home.tickerBeast': 'Beast შაურმა','home.tickerReal': 'ნამდვილი ინგრედიენტები, ავთენტური გემო','home.tickerMade': 'ახალი მომზადებული','home.tickerFlame': 'ბათუმის ცეცხლი',
+    'home.featuredEyebrow': 'გრილზე','home.featuredTitle': 'გამორჩეული კერძები','home.featuredDesc': 'გემო, რომელიც ყოველდღიურად იბადება ცეცხლზე — ფენა-ფენა, არასდროს აჩქარებული.','home.seeFullMenu': 'სრული მენიუ',
+    'home.whyEyebrow': "რატომ Nid'Z",'home.whyTitle': 'აშენებული ცეცხლზე, არა მოკლე გზებზე',
+    'home.f1Title': 'შეკვეთისამებრ მზადდება','home.f1Desc': 'ყველა შამფური და კერძი ცეცხლზე მხოლოდ შეკვეთის შემდეგ ხვდება — გახურება არ ხდება, მოკლე გზები არ არსებობს.',
+    'home.f2Title': 'ახალი ინგრედიენტები','home.f2Desc': 'ბოსტნეული ყოველდღიურად იჭრება, სოუსები ხელნაკეთია, პური თბილი ცხვება — არაფერი დგას დიდხანს.',
+    'home.f3Title': 'სწრაფი, მეგობრული მომსახურება','home.f3Desc': 'სწრაფი, მაგრამ არა აჩქარებული — შეკვეთა, შეფუთვა და ცხელი საჭმელი.',
+    'home.f4Title': 'ოჯახური ატმოსფერო','home.f4Desc': 'მყუდრო ადგილი ბათუმში სწრაფი საჭმლისთვის ან სრულფასოვანი სადილისთვის მთელ ოჯახთან ერთად.',
+    'home.galleryEyebrow': 'სამზარეულოს მიღმა','home.galleryTitle': 'შეხედე სამზარეულოს','home.viewFullGallery': 'სრული გალერეა',
+    'home.testiEyebrow': 'სტუმრები ამბობენ','home.testiTitle': 'პირდაპირ მაგიდიდან',
+    'home.t1q': '"Beast შაურმა თავის სახელს ამართლებს — დიდი, ცხელი და გემოთი სავსე. საუკეთესო შაურმა, რაც ბათუმში მიჭამია."','home.t1n': 'ნინა კ.','home.t1r': 'ადგილობრივი მეგზური',
+    'home.t2q': '"სწრაფი, მეგობრული და ნივრის სოუსი საოცარია. მოგზაურობის დროს სამჯერ დავბრუნდით."','home.t2n': 'ლევან თ.','home.t2r': 'რეგულარული სტუმარი',
+    'home.t3q': '"ოჯახური ატმოსფერო, დიდი პორციები და ყველაფერი ნამდვილად ახალია. Phoenix აუცილებლად უნდა სცადო."','home.t3n': 'სოფია მ.','home.t3r': 'ტურისტის მიმოხილვა',
+    'home.testiNote': 'ნიმუშური მიმოხილვები — ნამდვილი მიმოხილვები ნებისმიერ დროს შეგიძლიათ ჩაანაცვლოთ.',
+    'home.reviewSub': 'ჩვენი სტუმრების შეფასება','home.reviewGoogle': 'Google-ის მიმოხილვები','home.reviewTrip': 'TripAdvisor-ზე წაკითხვა','home.reviewAll': 'ყველა მიმოხილვა',
+    'home.followEyebrow': 'გამოგვყევი','home.socialInstagram': 'Instagram','home.socialTiktok': 'TikTok','home.socialTrip': 'TripAdvisor','home.socialMaps': 'Google Maps',
+    'home.ctaTitle': 'მშიერი ხარ?','home.ctaDesc': 'შეუკვეთე ონლაინ წამოსაღებად ან მიტანით, ან მობრძანდი და ჩვენ გრილი ავანთოთ შენთვის.','home.ctaOrder': 'ონლაინ შეკვეთა',
+    'footer.tagline': 'ცეცხლზე შემწვარი შაურმა, ქაბაბი და შეფუთული რულეტები, ახალი მომზადებული ბათუმში — ნამდვილი ინგრედიენტები, ავთენტური გემო.','footer.taglineShort': 'ცეცხლზე შემწვარი შაურმა, ქაბაბი და შეფუთული რულეტები, ახალი მომზადებული ბათუმში.',
+    'footer.quickLinks': 'სწრაფი ბმულები','footer.getInTouch': 'დაგვიკავშირდი','footer.findUs': 'მოგვძებნე','footer.rights': 'ყველა უფლება დაცულია.','footer.privacy': 'კონფიდენციალურობის პოლიტიკა','footer.terms': 'მომსახურების პირობები'
+  },
+  ar: {
+    'nav.home': 'الرئيسية','nav.menu': 'القائمة','nav.about': 'من نحن','nav.gallery': 'المعرض','nav.reviews': 'التقييمات','nav.contact': 'اتصل بنا','nav.orderNow': 'اطلب الآن',
+    'common.home': 'الرئيسية','common.whatsappUs': 'راسلنا على واتساب','common.getDirections': 'اتجاهات ←',
+    'home.heroTitle1': 'نار طازجة.','home.heroTitle2': 'طعم حقيقي.','home.heroLede': 'شاورما مشوية على النار، كباب ولفائف محشوة، تُحضّر طازجة حسب الطلب في قلب باتومي.','home.orderNow': '🔥 اطلب الآن','home.viewMenu': 'عرض القائمة','home.scroll': 'مرر للأسفل',
+    'home.tickerFresh': 'طازج يومياً','home.tickerSpecial': "شاورما نيدز الخاصة",'home.tickerBeast': 'شاورما بيست','home.tickerReal': 'مكونات حقيقية، طعم أصيل','home.tickerMade': 'طازج','home.tickerFlame': 'نار باتومي',
+    'home.featuredEyebrow': 'على الشواية','home.featuredTitle': 'أطباق مميزة','home.featuredDesc': 'طعم يولد على النار كل يوم — طبقة بعد طبقة، بلا عجلة.','home.seeFullMenu': 'القائمة الكاملة',
+    'home.whyEyebrow': "لماذا نيدز",'home.whyTitle': 'مصنوع على النار، وليس بالاختصارات',
+    'home.f1Title': 'يُشوى حسب الطلب','home.f1Desc': 'كل سيخ وقطعة توضع على النار فقط بعد طلبك — لا إعادة تسخين، ولا اختصارات.',
+    'home.f2Title': 'مكونات طازجة','home.f2Desc': 'خضار تُقطع يومياً، صوصات مصنوعة في المنزل، خبز يُخبز دافئاً — لا شيء يبقى طويلاً.',
+    'home.f3Title': 'خدمة سريعة وودودة','home.f3Desc': 'سريعة دون شعور بالعجلة — طلب، تغليف، وطعام ساخن.',
+    'home.f4Title': 'مناسب للعائلات','home.f4Desc': 'مكان مريح في باتومي لوجبة سريعة أو عشاء كامل مع العائلة.',
+    'home.galleryEyebrow': 'خلف اللفافة','home.galleryTitle': 'لمحة داخل المطبخ','home.viewFullGallery': 'المعرض الكامل',
+    'home.testiEyebrow': 'آراء الضيوف','home.testiTitle': 'مباشرة من الطاولة',
+    'home.t1q': '"شاورما بيست تفي باسمها — ضخمة، ساخنة ومليئة بالنكهة. أفضل شاورما في باتومي."','home.t1n': 'نينا ك.','home.t1r': 'مرشد محلي',
+    'home.t2q': '"سريع وودود، وصلصة الثوم إدمان. عدنا ثلاث مرات خلال رحلتنا."','home.t2n': 'ليفان ت.','home.t2r': 'ضيف دائم',
+    'home.t3q': '"مناسب للعائلات، حصص كبيرة وكل شيء طازج حقاً. فونيكس لا بد من تجربته."','home.t3n': 'صوفيا م.','home.t3r': 'تقييم سائح',
+    'home.testiNote': 'آراء نموذجية للعرض — استبدلها بآراء حقيقية في أي وقت.',
+    'home.reviewSub': 'بتقييم ضيوفنا','home.reviewGoogle': 'تقييماتنا على Google','home.reviewTrip': 'اقرأنا على TripAdvisor','home.reviewAll': 'جميع التقييمات',
+    'home.followEyebrow': 'تابع النار','home.socialInstagram': 'إنستغرام','home.socialTiktok': 'تيك توك','home.socialTrip': 'تريب أدفايزر','home.socialMaps': 'خرائط Google',
+    'home.ctaTitle': 'هل أنت جائع؟','home.ctaDesc': 'اطلب عبر الإنترنت للاستلام أو التوصيل، أو تعال إلينا وسنشعل الشواية من أجلك.','home.ctaOrder': 'اطلب عبر الإنترنت',
+    'footer.tagline': 'شاورما مشوية على النار، كباب ولفائف محشوة، تُحضّر طازجة في باتومي — مكونات حقيقية، طعم أصيل.','footer.taglineShort': 'شاورما مشوية على النار، كباب ولفائف محشوة، تُحضّر طازجة في باتومي.',
+    'footer.quickLinks': 'روابط سريعة','footer.getInTouch': 'تواصل معنا','footer.findUs': 'اعثر علينا','footer.rights': 'جميع الحقوق محفوظة.','footer.privacy': 'سياسة الخصوصية','footer.terms': 'شروط الخدمة'
+  }
+};
+
+// ===== LANGUAGE SWITCHER =====
+(function() {
+  let currentLang = localStorage.getItem('nidz_lang') || NIDZ.defaultLang;
+  if (!NIDZ.languages.includes(currentLang)) currentLang = NIDZ.defaultLang;
+
+  function translatePage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = translations[lang] && translations[lang][key];
+      if (translation) {
+        if (el.hasAttribute('data-i18n-placeholder')) {
+          el.placeholder = translation;
+        } else {
+          el.textContent = translation;
+        }
+      }
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  function buildLanguageSwitcher() {
+    document.querySelectorAll('.lang-switch').forEach(container => {
+      container.innerHTML = '';
+      NIDZ.languages.forEach(code => {
+        const btn = document.createElement('button');
+        btn.className = 'lang-btn' + (code === currentLang ? ' active' : '');
+        btn.dataset.lang = code;
+        btn.textContent = code.toUpperCase();
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentLang = this.dataset.lang;
+          localStorage.setItem('nidz_lang', currentLang);
+          translatePage(currentLang);
+        });
+        container.appendChild(btn);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { buildLanguageSwitcher(); translatePage(currentLang); });
+  } else {
+    buildLanguageSwitcher();
+    translatePage(currentLang);
+  }
+})();
+
+// ===== MAIN SITE FUNCTIONALITY =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Preloader
+  const preloader = document.getElementById('preloader');
+  if (preloader) setTimeout(() => preloader.classList.add('hide'), 800);
+
+  // Mobile nav
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', function() {
+      const isOpen = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isOpen);
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // Header scroll
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('scrolled', window.pageYOffset > 50);
+  });
+
+  // Testimonial slider
+  const slides = document.querySelectorAll('.testi-slide');
+  const dots = document.querySelector('.testi-dots');
+  if (slides.length > 0 && dots) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.toggle('active', i === 0);
+      dot.addEventListener('click', () => goToSlide(i));
+      dots.appendChild(dot);
+    });
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 6000);
+    function goToSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      dots.querySelectorAll('button').forEach((d, i) => d.classList.toggle('active', i === index));
+      currentSlide = index;
+    }
+    function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+    const slider = document.querySelector('.testi-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slider.addEventListener('mouseleave', () => {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 6000);
+      });
+    }
+  }
+
+  // Year in footer
+  document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
+
+  // Featured dishes
+  const menuItems = [
+    { name: { en: "Nid'Z Special Shawarma", ru: "Nid'Z Special Шаурма", ka: "Nid'Z სპეციალური შაურმა", ar: "شاورما نيدز الخاصة" }, desc: { en: 'Grilled chicken, fresh veggies, garlic sauce, wrapped in warm bread.', ru: 'Курица на гриле, свежие овощи, чесночный соус, в теплой лепёшке.', ka: 'შემწვარი ქათამი, ახალი ბოსტნეული, ნივრის სოუსი, თბილ პურში.', ar: 'دجاج مشوي، خضار طازجة، صلصة ثوم، ملفوفة بخبز دافئ.' }, price: '₾12', image: 'assets/img/thumb/nidz-special-shawarma.jpg' },
+    { name: { en: 'Beast Shawarma', ru: 'Beast Шаурма', ka: 'Beast შაურმა', ar: 'شاورما بيست' }, desc: { en: 'Double meat, extra sauce, loaded with crispy fries and pickles.', ru: 'Двойное мясо, дополнительный соус, с хрустящим картофелем и маринованными огурцами.', ka: 'ორმაგი ხორცი, დამატებითი სოუსი, ხრაშუნა კარტოფილი და მწნილი.', ar: 'لحم مضاعف، صلصة إضافية، محمّلة ببطاطس مقلية ومخللات.' }, price: '₾18', image: 'assets/img/thumb/beast-shawarma.jpg' },
+    { name: { en: 'Phoenix Wrap', ru: 'Phoenix Ролл', ka: 'Phoenix რულეტი', ar: 'لفافة فينيكس' }, desc: { en: 'Grilled chicken tawook, garlic paste, grilled veggies, and spicy sauce.', ru: 'Курица тавук на гриле, чесночная паста, овощи на гриле и острый соус.', ka: 'შემწვარი თაუქი, ნივრის პასტა, გრილზე შემწვარი ბოსტნეული და ცხარე სოუსი.', ar: 'دجاج تاووق مشوي، معجون ثوم، خضار مشوية، وصلصة حارة.' }, price: '₾14', image: 'assets/img/thumb/phoenix.jpg' }
+  ];
+
+  const grid = document.getElementById('featured-grid');
+  if (grid) {
+    function renderFeatured() {
+      const lang = localStorage.getItem('nidz_lang') || 'en';
+      grid.innerHTML = menuItems.map(item => `
+        <div class="dish-card reveal in">
+          <img src="${item.image}" alt="${item.name[lang] || item.name.en}" loading="lazy">
+          <div class="dish-card-body">
+            <div class="cat">Shawarma</div>
+            <h3>${item.name[lang] || item.name.en}</h3>
+            <p>${item.desc[lang] || item.desc.en}</p>
+            <div class="price">${item.price}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    renderFeatured();
+    // Re-render on language change
+    document.addEventListener('languageChanged', renderFeatured);
+  }
+
+  // Intersection Observer for reveals
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+});
+</script>
+</body>
+</html>
